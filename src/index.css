@@ -89,41 +89,37 @@ small {
     margin-top: 4rem;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .card {
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    background-color: rgba(26, 26, 26, 0.7);
     overflow: hidden;
     position: relative;
-    padding: 4rem;
+}
+
+.card--rating,
+.card--rating > small {
+    position: absolute;
+    top: -0.1rem;
+    left: 0;
+    z-index: 3;
+    padding: 0;
+    margin: 0;
+}
+
+.card--rating > small {
+    top: 0.6rem;
+    left: 1rem;
 }
 
 .card-img-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 .card--image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card--rating {
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    background-color: #e20712;
-    padding: 0.5rem 1rem;
-    border-radius: 5rem;
-    z-index: 3;
+    min-width: 100%;
 }
 
 .card--rating svg {
@@ -132,12 +128,9 @@ small {
 
 .card--title {
     margin-bottom: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 
-.card--desc {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
+.card--content p {
+    color: rgba(255, 255, 255, 0.6);
 }
