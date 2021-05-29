@@ -86,15 +86,21 @@ small {
 }
 
 .card-list {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .card {
     overflow: hidden;
     position: relative;
+}
+
+@media (max-width: 440px) {
+    .card-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
 }
 
 .card--rating,
@@ -122,15 +128,53 @@ small {
     min-width: 100%;
 }
 
+@media (max-width: 440px) {
+    .card--image {
+        max-height: 200px;
+        object-fit: cover;
+    }
+}
+
 .card--rating svg {
     margin-right: 0.5rem;
 }
 
 .card--title {
     margin-bottom: 0.5rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .card--content p {
     color: rgba(255, 255, 255, 0.6);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    border-top: 0.5px solid rgb(50, 50, 50);
+    border-bottom: 0.5px solid rgb(50, 50, 50);
+    padding: 0.3rem 0;
+}
+
+.pagination-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-wrap > p {
+    margin: 0 1rem;
+}
+
+.page-btn {
+    border: none;
+    background-color: #dadada;
+    border-radius: 50em;
+    color: #0f0f0f;
+    padding: 0.3rem 1rem;
+}
+
+.page-btn:disabled {
+    background-color: #7a7a7a;
 }

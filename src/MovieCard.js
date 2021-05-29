@@ -15,7 +15,7 @@ function MovieCard({ data }) {
                         <path
                             d="M0 0.627197H200L22.4852 44.4142L0 76.3668V0.627197Z"
                             fill="#BE000A"
-                            fill-opacity="0.5"
+                            fillOpacity="0.5"
                         />
                     </svg>
 
