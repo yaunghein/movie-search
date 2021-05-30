@@ -9,15 +9,12 @@ const SearchMovies = () => {
     const [totalPage, setTotalPage] = useState(0);
     const [totalResult, setTotalResult] = useState("");
 
-    //changing query state
     const handleQuery = (e) => {
         const { value } = e.target;
         setQuery(value);
     };
     const searchMovies = async (e) => {
-        //prevent default behavior of form (refresh)
         e.preventDefault();
-        //making API request
         const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=d95d62ce28024ff8fe4aa50b17187493&language=en-US&query=${query}&page=1&include_adult=true`;
         try {
             const res = await fetch(apiUrl);
@@ -63,7 +60,18 @@ const SearchMovies = () => {
     //filter movies only that contain poster
     const filterMovies = movies.filter((movie) => movie.poster_path);
     //mapping and generating movie cards
-    const movieCards = filterMovies.map((movie) => <MovieCard key={movie.id} data={movie} />);
+    const movieCards = filterMovies.map((movie) => (
+        /*
+            This is where I face problem.
+
+            What I expect: when click on one of movie cards, console log out target movie card, so that I can get it's id.
+                           Then, I will pull out the movie info from movies state with that id.
+                           <div class="card"></div>
+
+            What now happen: when click on movie cards, it console log out the specific element of that movie card.
+        */
+        <MovieCard key={movie.id} data={movie} handleCardClick={(e) => console.log(e.target)} />
+    ));
     return (
         <div>
             <form className="form" onSubmit={searchMovies}>

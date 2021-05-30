@@ -1,8 +1,9 @@
 import React from "react";
 
-function MovieCard({ data }) {
+function MovieCard(props) {
+    const data = props.data;
     return (
-        <div className="card">
+        <div id={data.id} className="card" onClick={props.handleCardClick}>
             <div className="card-img-container">
                 <img
                     className="card--image"
