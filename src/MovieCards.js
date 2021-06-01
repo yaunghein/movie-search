@@ -1,14 +1,15 @@
 import React from "react";
 
-function MovieCard(props) {
-    const data = props.data;
-    return (
-        <div id={data.id} className="card" onClick={props.handleCardClick}>
+const MovieCards = (props) => {
+    const { movies } = props;
+    const filterMovies = movies.filter((movie) => movie.poster_path);
+    const movieCards = filterMovies.map((movie) => (
+        <div key={movie.id} className="card" onClick={() => props.handleCardClick(movie.overview)}>
             <div className="card-img-container">
                 <img
                     className="card--image"
-                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${data.poster_path}`}
-                    alt={data.title + " poster"}
+                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    alt={movie.title + " poster"}
                 />
                 <p className="card--rating">
                     <svg width="200" height="77" viewBox="0 0 200 77" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,17 +29,22 @@ function MovieCard(props) {
                             />
                         </svg>
 
-                        {data.vote_average}
+                        {movie.vote_average}
                     </small>
                 </p>
             </div>
 
             <div className="card--content">
-                <h3 className="card--title">{data.original_title}</h3>
-                <p>RELEASE DATE: {data.release_date}</p>
+                <h3 className="card--title">{movie.original_title}</h3>
+                <p>RELEASE DATE: {movie.release_date}</p>
             </div>
         </div>
+    ));
+    return (
+        <div>
+            <div className="card-list">{movieCards}</div>
+        </div>
     );
-}
+};
 
-export default MovieCard;
+export default MovieCards;
