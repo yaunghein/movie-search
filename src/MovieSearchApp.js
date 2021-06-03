@@ -34,6 +34,7 @@ const MovieSearchApp = () => {
     const searchMovies = async (e) => {
         e.preventDefault();
         const data = await fetchData(getURL(1));
+        console.log(data);
         setTotalPage(data.total_pages);
         setTotalResult(data.total_results);
     };
@@ -51,10 +52,6 @@ const MovieSearchApp = () => {
         fetchData(getURL(page.current));
     };
 
-    const handleCardClick = (overview) => {
-        console.log(overview);
-    };
-
     return (
         <div className="container">
             <Header />
@@ -66,7 +63,7 @@ const MovieSearchApp = () => {
                 currentPage={page.current}
                 totalPage={totalPage}
             />
-            <MovieCards movies={movies} handleCardClick={handleCardClick} />
+            <MovieCards movies={movies} />
         </div>
     );
 };

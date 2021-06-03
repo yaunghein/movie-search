@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import MoviePopupCard from "./MoviePopupCard";
 
 const MovieCards = (props) => {
+    const [clickMovie, setClickMovie] = useState({});
+    const [isClicked, setIsClicked] = useState(false);
+
     const { movies } = props;
     const filterMovies = movies.filter((movie) => movie.poster_path);
     const movieCards = filterMovies.map((movie) => (
-        <div key={movie.id} className="card" onClick={() => props.handleCardClick(movie.overview)}>
+        <div key={movie.id} className="card" onClick={() => handleClick(movie)}>
             <div className="card-img-container">
                 <img
                     className="card--image"
@@ -40,8 +44,19 @@ const MovieCards = (props) => {
             </div>
         </div>
     ));
+
+    function handleClick(movie) {
+        setClickMovie(movie);
+        setIsClicked(true);
+    }
+
+    function handleCancel() {
+        setIsClicked(false);
+    }
+    document.body.style.overflow = isClicked ? "hidden" : "unset";
     return (
         <div>
+            {isClicked ? <MoviePopupCard movie={clickMovie} handleCancle={handleCancel} /> : ""}
             <div className="card-list">{movieCards}</div>
         </div>
     );

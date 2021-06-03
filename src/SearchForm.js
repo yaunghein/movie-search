@@ -11,11 +11,13 @@ const SearchForm = (props) => {
                 type="text"
                 name="query"
                 value={props.value}
-                placeholder="i.e. Jurassic Park"
+                placeholder="i.e. Spider Man"
                 autoComplete="off"
                 onChange={props.handleQuery}
             />
-            <button className="button">Search</button>
+            <button className="button" disabled={props.value ? false : true}>
+                Search
+            </button>
         </form>
     );
 };
