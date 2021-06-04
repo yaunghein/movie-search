@@ -150,6 +150,7 @@ small {
 
 @media (max-width: 440px) {
     .card--image {
+        min-height: 200px;
         max-height: 200px;
         object-fit: cover;
     }
