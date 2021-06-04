@@ -184,7 +184,7 @@ small {
     padding: 1rem 0;
     background-color: rgba(26, 26, 26, 0.5);
     position: sticky;
-    top: 2rem;
+    top: 0;
     backdrop-filter: blur(12px);
     -moz-backdrop-filter: blur(12px);
     z-index: 4;
