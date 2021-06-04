@@ -137,6 +137,9 @@ small {
 
 .card--image {
     min-width: 100%;
+    min-height: 22.5rem;
+    max-height: 22.5rem;
+    object-fit: cover;
     transform: scale(1.1);
     transition: transform 0.2s ease-out;
 }
@@ -160,10 +163,6 @@ small {
     transition: color 0.2s ease-out;
 }
 
-.card:hover .card--content {
-    color: #e20712;
-}
-
 .card--title {
     margin: 1rem 0 0.5rem;
     font-size: 1.2rem;
@@ -172,9 +171,6 @@ small {
 .card--content p {
     color: rgba(255, 255, 255, 0.6);
     transition: color 0.2s ease-out;
-}
-.card:hover .card--content p {
-    color: rgba(226, 7, 18, 1);
 }
 
 .nav {
@@ -223,7 +219,7 @@ small {
     display: grid;
     place-items: center;
     z-index: 4;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
     -moz-backdrop-filter: blur(12px);
     animation: popup-bg-open 0.2s ease-in-out;
@@ -234,7 +230,7 @@ small {
         background-color: rgba(0, 0, 0, 0);
     }
     to {
-        background-color: rgba(0, 0, 0, 0.75);
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -275,7 +271,8 @@ small {
 
 .popup__img {
     width: 100%;
-    max-height: 200px;
+    min-height: 20rem;
+    max-height: 20rem;
     object-fit: cover;
     object-position: 0% 10%;
 }

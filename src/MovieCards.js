@@ -12,7 +12,7 @@ const MovieCards = (props) => {
             <div className="card-img-container">
                 <img
                     className="card--image"
-                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                     alt={movie.title + " poster"}
                 />
                 <p className="card--rating">
