@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MoviePopupCard = (props) => {
     const { movie } = props;
-    console.log(movie);
     return (
         <div className="popup" onClick={props.handleCancle}>
             <div className="popup__container">
@@ -99,10 +99,12 @@ const MoviePopupCard = (props) => {
                     </div>
                     <p className="popup__overview">{movie.overview}</p>
                     <div className="popup__btn-container">
-                        <button className="button popup__btn--cancel" onClick={props.handleCancle}>
+                        <a className="button popup__btn--cancel" onClick={props.handleCancle}>
                             Cancle
-                        </button>
-                        <button className="button popup__btn--watch">Watch Now</button>
+                        </a>
+                        <Link to={`/movie/${movie.id}`} className="button popup__btn--watch">
+                            Watch Now
+                        </Link>
                     </div>
                 </div>
             </div>

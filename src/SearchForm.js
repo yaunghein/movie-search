@@ -15,7 +15,7 @@ const SearchForm = (props) => {
                 autoComplete="off"
                 onChange={props.handleQuery}
             />
-            <button className="button" disabled={props.value ? false : true}>
+            <button className="button search-btn" disabled={props.value ? false : true}>
                 Search
             </button>
         </form>

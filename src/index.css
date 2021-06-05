@@ -26,6 +26,12 @@ small {
     font-size: 1.2rem;
 }
 
+a {
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1000px;
@@ -69,6 +75,8 @@ small {
 }
 
 .button {
+    display: inline-block;
+    text-align: center;
     background-color: #e20712;
     color: white;
     padding: 1rem 2rem;
@@ -78,6 +86,10 @@ small {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 250ms;
+}
+
+.search-btn {
+    font-weight: 500;
 }
 
 .button:hover {
@@ -351,17 +363,18 @@ small {
 
 @media (min-width: 786px) {
     .popup__btn-container {
-        width: 50%;
+        width: 80%;
         margin-left: auto;
     }
 }
 
 .popup__btn--watch {
-    flex-grow: 1;
+    width: 70%;
     margin-left: 1rem;
 }
 
 .popup__btn--cancel {
+    width: 30%;
     background: transparent;
     font-weight: 500;
     opacity: 0.8;
