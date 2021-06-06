@@ -6,6 +6,7 @@ import SearchForm from "./SearchForm";
 import PaginationBar from "./PaginationBar";
 import MovieCards from "./MovieCards";
 import WatchMovieTemplate from "./WatchMovieTemplate";
+import ScrollToTop from "./scrollToTop";
 
 const MovieSearchApp = () => {
     const [query, setQuery] = useState("");
@@ -71,7 +72,9 @@ const MovieSearchApp = () => {
                     <MovieCards movies={movies} />
                 </Route>
                 <Route path="/movie/:movieId">
-                    <WatchMovieTemplate movies={movies} />
+                    <ScrollToTop>
+                        <WatchMovieTemplate movies={movies} />
+                    </ScrollToTop>
                 </Route>
             </Switch>
         </div>

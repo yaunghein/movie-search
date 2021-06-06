@@ -102,7 +102,11 @@ const MoviePopupCard = (props) => {
                         <a className="button popup__btn--cancel" onClick={props.handleCancle}>
                             Cancle
                         </a>
-                        <Link to={`/movie/${movie.id}`} className="button popup__btn--watch">
+                        <Link
+                            to={`/movie/${movie.id}`}
+                            className="button popup__btn--watch"
+                            onClick={() => (document.body.style.overflow = "unset")}
+                        >
                             Watch Now
                         </Link>
                     </div>
