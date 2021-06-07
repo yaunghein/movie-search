@@ -34,19 +34,39 @@ a {
 
 .container {
     margin: 0 auto;
-    max-width: 1000px;
-    padding: 4rem;
+    max-width: 1100px;
+    padding: 2rem;
 }
 
-@media (max-width: 786px) {
-    .container {
-        padding: 4rem 2rem;
-    }
+header {
+    background-color: #2c2c2c;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button.nav-link {
+    width: auto;
+    background-color: #1a1a1a;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .title {
-    font-size: 4.4rem;
-    text-align: center;
+    font-size: 3.6rem;
+}
+
+@media (max-width: 786px) {
+    .title {
+        font-size: 2.6rem;
+    }
+}
+
+.title > span {
+    color: #e20712;
 }
 
 .form {
@@ -59,6 +79,13 @@ a {
     margin-bottom: 0.5rem;
     padding-left: 2rem;
     text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 786px) {
+    .label {
+        padding-left: 0;
+    }
 }
 
 .input {
@@ -384,13 +411,6 @@ a {
     background-color: rgb(0, 0, 0);
 }
 
-.template-container {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 .watch-container {
     width: 100%;
     position: relative;
@@ -416,6 +436,16 @@ a {
 .template-info-container {
     max-width: 720px;
     margin: 0 auto;
+}
+
+.back-btn {
+    display: inline;
+}
+
+@media (max-width: 786px) {
+    .back-btn {
+        display: block;
+    }
 }
 
 .cast-container {

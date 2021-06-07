@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const WatchMovieTemplate = (props) => {
     const { movieId } = useParams();
@@ -106,6 +106,9 @@ const WatchMovieTemplate = (props) => {
                         </div>
                     </div>
                 </div>
+                <Link to="/" className="button back-btn">
+                    Back
+                </Link>
             </div>
         </div>
     );

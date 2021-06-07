@@ -56,27 +56,28 @@ const MovieSearchApp = () => {
     };
 
     return (
-        <div className="container">
+        <div>
             <Header />
-
-            <Switch>
-                <Route exact path="/">
-                    <SearchForm searchMovies={searchMovies} value={query} handleQuery={handleQuery} />
-                    <PaginationBar
-                        movies={movies}
-                        totalResult={totalResult}
-                        handlePagination={handlePagination}
-                        currentPage={page.current}
-                        totalPage={totalPage}
-                    />
-                    <MovieCards movies={movies} />
-                </Route>
-                <Route path="/movie/:movieId">
-                    <ScrollToTop>
-                        <WatchMovieTemplate movies={movies} />
-                    </ScrollToTop>
-                </Route>
-            </Switch>
+            <div className="container">
+                <Switch>
+                    <Route exact path="/">
+                        <SearchForm searchMovies={searchMovies} value={query} handleQuery={handleQuery} />
+                        <PaginationBar
+                            movies={movies}
+                            totalResult={totalResult}
+                            handlePagination={handlePagination}
+                            currentPage={page.current}
+                            totalPage={totalPage}
+                        />
+                        <MovieCards movies={movies} />
+                    </Route>
+                    <Route path="/movie/:movieId">
+                        <ScrollToTop>
+                            <WatchMovieTemplate movies={movies} />
+                        </ScrollToTop>
+                    </Route>
+                </Switch>
+            </div>
         </div>
     );
 };
