@@ -407,6 +407,12 @@ a {
     border-radius: 0.8rem;
 }
 
+@media (max-width: 786px) {
+    .watch__img {
+        max-height: 100%;
+    }
+}
+
 .watch__icon {
     position: absolute;
     top: 50%;
