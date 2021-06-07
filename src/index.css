@@ -407,11 +407,44 @@ a {
     border-radius: 0.8rem;
 }
 
-.watch__text {
+.watch__icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 0.5rem;
+}
+
+.template-info-container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.cast-container {
+    margin: 2rem 0;
+}
+
+.cast-pill-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cast__pill {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cast__img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 100rem;
+    border: 2px solid #e20712;
+    margin-right: 0.5rem;
+}
+
+.cast__name {
+    font-size: 1.2rem;
 }
