@@ -215,7 +215,7 @@ header {
     transition: transform 0.2s ease-out;
 }
 
-.card-wrapper:hover .card--image {
+.card:hover .card--image {
     transform: scale(1.05);
 }
 
@@ -508,4 +508,38 @@ header {
 
 .cast__name {
     font-size: 1.2rem;
+}
+
+.no-fav-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+
+.no-fav-image {
+    height: 12em;
+}
+
+.no-fav-text {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0.5em 0 2em;
+    max-width: 16em;
+}
+
+.no-fav-btn {
+    width: 20%;
+}
+@media (max-width: 1200px) {
+    .no-fav-btn {
+        width: 40%;
+    }
+}
+@media (max-width: 500px) {
+    .no-fav-btn {
+        width: 90%;
+    }
 }

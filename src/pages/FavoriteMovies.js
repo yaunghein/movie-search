@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../Context";
 import MoviePopupCard from "../components/MoviePopupCard";
+import NoFavMovie from "../components/NoFavMovie";
 
 const FavoriteMovies = () => {
     const { favMovies, removeFromFavorite, toggleFavorite } = useContext(Context);
@@ -77,9 +78,15 @@ const FavoriteMovies = () => {
     document.body.style.overflow = isClicked ? "hidden" : "unset";
     return (
         <div>
-            <h1>Favorite Movies</h1>
+            {favMovies.length > 0 ? (
+                <>
+                    <h1>Favorite Movies</h1>
+                    <div className="card-list">{favMoviesDisplay}</div>
+                </>
+            ) : (
+                <NoFavMovie />
+            )}
             {isClicked ? <MoviePopupCard clickMovie={clickMovie} handleCancle={handleCancel} /> : ""}
-            <div className="card-list">{favMoviesDisplay}</div>
         </div>
     );
 };

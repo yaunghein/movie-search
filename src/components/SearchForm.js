@@ -16,7 +16,6 @@ const SearchForm = () => {
                 value={query}
                 placeholder="i.e. Spider Man"
                 autoComplete="off"
-                autoFocus
                 onChange={handleQuery}
             />
             <button className="button search-btn" disabled={query ? false : true}>
