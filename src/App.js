@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
 import PaginationBar from "./components/PaginationBar";
-import MovieCards from "./components/MovieCards";
+import MovieCards from "./pages/MovieCards";
 import WatchMovieTemplate from "./pages/WatchMovieTemplate";
 import FavoriteMovies from "./pages/FavoriteMovies";
 import ScrollToTop from "./utility/scrollToTop";
+import { Context } from "./Context";
 
 const App = () => {
+    const { movies } = useContext(Context);
     return (
-        <div>
+        <div className="main-container">
             <Header />
             <div className="container">
                 <Switch>
@@ -30,6 +33,7 @@ const App = () => {
                     </Route>
                 </Switch>
             </div>
+            {movies.length > 0 && <Footer />}
         </div>
     );
 };

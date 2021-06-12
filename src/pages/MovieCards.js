@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import MoviePopupCard from "./MoviePopupCard";
+import MoviePopupCard from "../components/MoviePopupCard";
 import { Context } from "../Context";
 
 const MovieCards = () => {
