@@ -56,6 +56,10 @@ header {
     position: relative;
 }
 
+.button.nav-link:hover {
+    background-color: #111111;
+}
+
 .fav-movie-count {
     position: absolute;
     top: 0.5em;
