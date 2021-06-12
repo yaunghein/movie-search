@@ -53,6 +53,20 @@ header {
     background-color: #1a1a1a;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.fav-movie-count {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    width: 0.5em;
+    height: 0.5em;
+    display: grid;
+    place-items: center;
+    border-radius: 5em;
+    background-color: #e20712;
+    padding: 0.3em;
 }
 
 .title {
@@ -144,7 +158,25 @@ header {
 
 .card {
     overflow: hidden;
+}
+
+.card-wrapper {
     position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: 10em;
+    right: 0.3em;
+    font-size: 1.7em;
+    z-index: 4;
+    width: 1.7em;
+    height: 1.7em;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #e20712;
+    border-radius: 5em;
 }
 
 @media (max-width: 440px) {
@@ -176,14 +208,14 @@ header {
 
 .card--image {
     min-width: 100%;
-    min-height: 22.5rem;
-    max-height: 22.5rem;
+    min-height: 200px;
+    max-height: 200px;
     object-fit: cover;
     transform: scale(1.1);
     transition: transform 0.2s ease-out;
 }
 
-.card:hover .card--image {
+.card-wrapper:hover .card--image {
     transform: scale(1.05);
 }
 
@@ -226,7 +258,7 @@ header {
     top: 0;
     backdrop-filter: blur(12px);
     -moz-backdrop-filter: blur(12px);
-    z-index: 4;
+    z-index: 10;
 }
 
 .pagination-wrap {
@@ -258,7 +290,7 @@ header {
     height: 100vh;
     display: grid;
     place-items: center;
-    z-index: 4;
+    z-index: 20;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
     -moz-backdrop-filter: blur(12px);
