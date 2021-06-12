@@ -33,7 +33,7 @@ const App = () => {
                     </Route>
                 </Switch>
             </div>
-            {movies.length > 0 && <Footer />}
+            <Footer />
         </div>
     );
 };
